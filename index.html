@@ -1,21 +1,209 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>BigBug Games</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigBug Games | Mobile Game Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary-blue: #2563eb;
+            --accent-yellow: #facc15;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-  </head>
-  <body>
-      <h1 class="title">BigBug Games</h1>
-      <p id="currentTime">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-Independent Game Studio
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-We create engaging casual and mobile games
-for players around the world.
-</p>
-<p>
+        /* Hero Container */
+        header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
 
-Contact:
-rutvik.panchal.246@gmail.com</p>
-  </body>
+        /* Floating Animation */
+        .logo-img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--accent-yellow);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 10px rgba(250, 204, 21, 0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Banner Showcase */
+        .banner-container {
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .banner-container:hover {
+            transform: scale(1.02);
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+        }
+
+        /* Game Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: var(--accent-yellow);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Subtle Background Particles */
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-yellow);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: pulse 2.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            100% { transform: scale(1.4); opacity: 0.9; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="sparkle" style="top: 15%; left: 20%;"></div>
+        <div class="sparkle" style="top: 25%; right: 18%; animation-delay: 1s;"></div>
+        
+        <img src="assets/images/logo.png" alt="BigBug Games Logo" class="logo-img">
+        
+        <h1>Creating Fun Mobile Experiences</h1>
+        <p class="subtitle">Indie mobile game development studio focused on vibrant 2D puzzles and engaging casual titles.</p>
+        
+        <div class="banner-container">
+            <img src="assets/images/banner.jpg" alt="BigBug Games Showcase" class="banner-img">
+        </div>
+    </header>
+
+    <section id="games">
+        <h2 class="section-title">Our Focus</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🎮 Mobile Games</h3>
+                <p>Designing intuitive 2D mechanics, grid puzzles, and color-matching adventures built for seamless performance on mobile devices.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Playful Design</h3>
+                <p>Crafting vibrant characters and polished vector visuals that bring joyful world-building to life.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Fast Performance</h3>
+                <p>Optimized gameplay loops engineered to load instantly and run smoothly across all modern mobile hardware.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BigBug Games. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
