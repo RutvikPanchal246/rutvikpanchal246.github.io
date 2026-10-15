@@ -1,0 +1,35 @@
+
+:root{--ink:#101828;--mut:#5b6475;--bg:#f5f7fa;--line:#e3e7ee;--brand:#2f5bff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font:17px/1.6 'DM Sans',system-ui,sans-serif;color:var(--ink);background:#fff}
+h1,h2,h3,.brand{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1}
+a{color:inherit}a:focus-visible,.btn:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffe;backdrop-filter:blur(8px);z-index:5}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;text-decoration:none}.brand img{height:34px}
+.nav nav{display:flex;align-items:center;gap:22px}.nav nav a{text-decoration:none;font-weight:500}.nav nav a.btn{color:#fff}
+section,main.app{max-width:1060px;margin:0 auto;padding:72px 5vw}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding-top:88px}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+h2{font-size:2rem;font-weight:800;margin-bottom:28px}.lead{color:var(--mut);font-size:1.15rem;max-width:34em;margin-bottom:28px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;transform:rotate(-4deg)}.tiles .ico:nth-child(even){transform:translateY(18px)}
+.ico{position:relative;display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--c);flex:none;overflow:hidden;font-size:28px}
+.ico img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ico.big{width:100%;height:auto;aspect-ratio:1;border-radius:24px;font-size:clamp(28px,5vw,48px)}
+.ico.huge{width:132px;height:132px;border-radius:30px;font-size:64px;margin:28px 0 22px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;border:2px solid var(--brand);transition:background .2s}
+.btn:hover{background:#1e45d6}.btn.sm{padding:8px 16px}.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line)}.btn.ghost:hover{background:var(--bg)}
+.btn.store{background:var(--ink);border-color:var(--ink)}.btn.off{background:var(--bg);color:var(--mut);border-color:var(--line);cursor:default}
+.rows{border-top:1px solid var(--line)}.row{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.rowlink{display:flex;align-items:center;gap:18px;text-decoration:none}.row h3{font-size:1.35rem}.row p{color:var(--mut)}
+.acts{display:flex;gap:10px;flex-wrap:wrap}.about{background:var(--bg);max-width:none}.about>*{max-width:760px;margin-left:auto;margin-right:auto}.about p{color:var(--mut);font-size:1.1rem}
+.app{text-align:center;display:flex;flex-direction:column;align-items:center;min-height:80vh}
+.tag{color:var(--mut);font-size:1.15rem;margin-bottom:22px}.desc{max-width:34em;margin-bottom:32px}.dl{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:28px 5vw;border-top:1px solid var(--line);color:var(--mut);font-size:.92rem}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border:1px solid #a6a6a6;border-radius:10px;padding:8px 18px 8px 12px;text-decoration:none;line-height:1.1;transition:transform .15s}
+.badge svg{width:28px;height:28px;flex:none}.badge small{display:block;font-size:10.5px;font-weight:500}.badge b{font-size:21px;font-weight:600;letter-spacing:-.2px}
+a.badge:hover{transform:translateY(-2px)}.badge.sm{padding:5px 12px 5px 9px;gap:8px}.badge.sm svg{width:22px;height:22px}.badge.sm small{font-size:8.5px}.badge.sm b{font-size:16px}
+.badge.off{opacity:.45;cursor:default}.soon{color:var(--mut);font-size:.9rem;margin-top:14px}
+.brand img{height:44px}.fbrand{display:flex;align-items:center;gap:10px}.fbrand img{height:30px}
+.app{justify-content:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.tiles{max-width:340px}.row{flex-direction:column;align-items:flex-start}.nav nav a:not(.btn){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
